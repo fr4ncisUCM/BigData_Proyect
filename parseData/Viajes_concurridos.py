@@ -1,5 +1,7 @@
+from pyspark.sql.functions import udf
 import sys
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import concat, lit, col, asc
 
 spark_app = SparkSession.builder.appName('ViajesCount').getOrCreate()
 
@@ -9,27 +11,22 @@ df = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 # number_of_trips = sys.argv[1]
 
 # Valid columns
-validC = ['legId', 'startingAirport', 'destinationAirport']
+validC = ['startingAirport', 'destinationAirport']
 
 # fit the dataframe
 df = df[validC]
 
 
 def join_airports(dataframe):
-    return dataframe.startingAirport + '-' + dataframe.destinationAirport \
-        if dataframe.startingAirport < dataframe.destinationAirport \
-        else dataframe.destinationAirport + '-' + dataframe.startingAirport
+    a = str(dataframe.destinationAirport)
+    b = str(dataframe.startingAirport)
+    if a < b:
+        return "startingAirport", "destinationAirport"
+    else:
+        return "destinationAirport", "startingAirport"
 
 
-dFinal = df.groupBy('legId') \
-    .withColumns('trayecto', join_airports(df)) \
-    .groupBy('legId').groupBy('trayecto').count()
-
-dFinal.show()
-
-
-
-
-
-
-
+df1 = df.select("*", concat(col(join_airports(df)[0]), lit(" "), col(join_airports(df)[1])).alias("trip")) \
+    .groupBy("trip").count() \
+    .orderBy("count", ascending=False)
+df1.show()
