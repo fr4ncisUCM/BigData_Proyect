@@ -1,8 +1,7 @@
--Fecha del vuelo por meses
--Viajes mas concurridos
--Vijaes economicos / filtra y mostar comparacion por aereolinea
--"" Duracion
--filtrar por dias
--Es reembolsable
--escalas medias por lugar y areolinea
--¿? Taxes
+Que viajes son más económicos.
+Que viajes son más cortos(Duración).
+Que viajes son mas concurridos
+Que viajes implican menos escalas.
+Que destinos son más frecuentes.
+Que salida son mas frecuentes.
+Días y semanas más frecuentes.
