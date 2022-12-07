@@ -1,10 +1,6 @@
-from pyspark.sql.functions import col, substring
-from pyspark.sql.functions import udf
+from matplotlib import pyplot as plt
 import sys
-from pyspark.ml.evaluation import BinaryClassificationEvaluator
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import concat, lit, col, asc
-from pyspark.sql.types import IntegerType, DoubleType
 
 spark_app = SparkSession.builder.appName('empresas').getOrCreate()
 
@@ -30,13 +26,20 @@ def complete_dict(names):
 
 my_list = df.select("segmentsDepartureAirportCode").rdd.flatMap(lambda x: x).collect()
 
-
 # Complete the dictionary
-with open("paso1.txt", "w") as file:
-        for valor in my_list:
-                complete_dict(valor)
-space = " "
+for valor in my_list:
+    complete_dict(valor)
 # Write a file with the dict values
 with open("paso2.txt", "w") as file:
-	for key, value in airlanesNames.items():
-    		file.write("{}: {}\n".format(key, value))
+    for key, value in airlanesNames.items():
+        file.write("{}: {}\n".format(key, value))
+
+# Create a list of the labels for the pie chart
+labels = list(airlanesNames.keys())
+
+# Create a list of the values for the pie chart
+values = list(airlanesNames.values())
+
+# Create the pie chart
+plt.pie(values, labels=labels)
+plt.savefig('businessPie.png')
