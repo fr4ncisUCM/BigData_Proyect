@@ -2,6 +2,7 @@ import sys
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import substring
 from pyspark.sql.functions import concat, lit, col, asc
+from pyspark.sql.types import IntegerType, DoubleType
 
 spark_app = SparkSession.builder.appName('empresas').getOrCreate()
 
@@ -14,9 +15,13 @@ validC = ['startingAirport', 'destinationAirport', 'totalTravelDistance', 'total
 df = df[validC]
 
 df1 = df.dropna()\
-    .select("*", concat(substring('startingAirport', 0, 3), lit(" "), substring('destinationAirport', 0, 3)).alias("trip")) \
-    .groupBy('trip').avg('totalFare', 'totalTravelDistance')\
-    .drop(['startingAirport', 'destinationAirport'])
+    .select("*", concat(substring('startingAirport', 0, 3), lit(" "), substring('destinationAirport', 0, 3)).alias("trip"))\
+    .withColumns({'totalFare': df.totalFare.cast(DoubleType())})\
+    .withColumns({'totalTravelDistance': df.totalTravelDistance.cast(IntegerType())})\
+    .groupBy('trip').max('totalTravelDistance', 'totalFare')\
+    .drop('startingAirport')\
+    .drop('destinationAirport')\
+    .sort("max(totalTravelDistance)")
 df1.show()
 
 # Convert to a pandas Dataframe
@@ -27,3 +32,4 @@ fig = pandas_df.plot().figure
 
 # Save the plot to a file
 fig.savefig("evolution.png")
+
