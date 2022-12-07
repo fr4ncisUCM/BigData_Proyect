@@ -8,11 +8,12 @@ spark_app = SparkSession.builder.appName('ViajesCount').getOrCreate()
 df = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 
 # Valid columns
-validC = ['startingAirport', 'destinationAirport', 'elapsedDays']
+validC = ['startingAirport', 'destinationAirport', 'isNonStop']
 
 # fit the dataframe
 df = df[validC]
-df = df.withColumn('elapsedDays', col('elapsedDays').cast("float"))\
-       .groupBy('startingAirport', 'destinationAirport').avg('elapsedDays')\
+df = df.withColumn('isNonStop',col('isNonStop').cast('boolean'))\
+       .filter(df.isNonStop == False)\
+       .groupBy('startingAirport', 'destinationAirport', 'isnonStop').count()\
        .orderBy('startingAirport', 'destinationAirport')
 df.show()
