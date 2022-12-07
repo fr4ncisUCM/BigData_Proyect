@@ -14,7 +14,7 @@ df = df[validC]
 
 df.printSchema()
 
-df1 = df.withColumn('CodeCompany', split(df['segmentsAirlineCode'], '\\|\\|').getItem(0).drop('segmentsAirlineCode'))
+df1 = df.withColumn('CodeCompany', split(df['segmentsAirlineCode'], '\\|\\|').getItem(0)).drop('segmentsAirlineCode')
 
 df2 = df1.withColumn("totalFare", col("totalFare").cast('float'))
 
