@@ -12,8 +12,8 @@ validC = ['startingAirport', 'destinationAirport', 'isNonStop']
 
 # fit the dataframe
 df = df[validC]
-df = df.withColumn('isNonStop',col('isNonStop').cast('boolean'))\
-       .filter(df.isNonStop == False)\
-       .groupBy('startingAirport', 'destinationAirport', 'isnonStop').count()\
-       .orderBy('startingAirport', 'destinationAirport')
+df = df.withColumn('isNonStop', col('isNonStop').cast('boolean')) \
+    .filter(df.isNonStop == False) \
+    .groupBy('startingAirport', 'destinationAirport', 'isnonStop').count() \
+    .orderBy('startingAirport', 'destinationAirport')
 df.show()

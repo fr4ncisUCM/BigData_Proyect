@@ -16,15 +16,18 @@ df = df[validC]
 airlanesNames = {}
 
 
-def complete_dict(names):
+def complete_dict(names):  # TODO pending to approve
     list_names = names.split('||')
-    for name in list_names:
+    my_set = set()
+    for name2 in list_names:
+        my_set.add(name2)
+    for name in my_set:
         if name not in airlanesNames:
             airlanesNames[name] = 0
         airlanesNames[name] += 1
 
 
-my_list = df.select("segmentsDepartureAirportCode").rdd.flatMap(lambda x: x).collect()
+my_list = df.select("segmentsAirlineCode").rdd.flatMap(lambda x: x).collect()
 
 # Complete the dictionary
 for valor in my_list:

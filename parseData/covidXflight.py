@@ -1,5 +1,5 @@
 import sys
-from pyspark.sql.types import IntegerType
+from pyspark.sql.types import IntegerType, DoubleType
 from pyspark.sql import SparkSession
 
 spark_app = SparkSession.builder.appName('covid').getOrCreate()
@@ -10,7 +10,7 @@ dfCovid = spark_app.read.format("csv").option("header", "true").load("USA_Covid_
 
 # Valid columns
 validCFights = ['destinationAirport']
-validCovid = ['State', 'Active']  # try to find active % cases
+validCovid = ['State', 'Active', 'Population']  # try to find active % cases
 
 # Fit the dataframe
 dfFlights = dfFlights[validCFights]
@@ -22,13 +22,12 @@ dfFlights2 = dfFlights.dropna() \
 
 # Delete rows with null values
 dfCovid2 = dfCovid.dropna() \
-    .withColumns({'Active': dfCovid.Active.cast(IntegerType())})
+    .withColumns({'Population': dfCovid.Population.cast(IntegerType())}) \
+    .withColumns({'Active': dfCovid.Active.cast(DoubleType()) / 10 })
 
 df3 = dfFlights2.join(dfCovid2, dfFlights2.destinationAirport == dfCovid2.State, "inner") \
     .drop('State')
-# dfFlights2 = dfFlights2['destinationAirport','count','Active']
 pandas_df = df3.toPandas()
-print(pandas_df)
 # plotting graph
 fig = pandas_df.plot(x="destinationAirport", y=['Active', 'count'], kind="bar").figure
 # Save the plot to a file
