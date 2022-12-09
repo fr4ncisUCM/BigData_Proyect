@@ -5,3 +5,19 @@ Que viajes implican menos escalas -> Done
 Que destinos son más frecuentes -> Done
 Que salida son mas frecuentes -> Done
 Días y semanas más frecuentes. -> Done
+
+---> Analisis posterior
+
+Things we have :
+-  Average fare for each company
+-  Relation between covid cases and count of the flights
+-  Number of flights per day
+-  Relation between distance and the fare
+-  Number of flights for airline
+-  Evolution of the fare attending to the days
+-  Number of trips with no scale
+-  Flights per day
+-  Most common trips
+
+Conclusion :
+- We have a periodical behaviour on the fare of the flights ( get more expensive in Sundey )
