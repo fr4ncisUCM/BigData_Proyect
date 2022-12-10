@@ -18,6 +18,8 @@ El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar co
 - segmentsAirlineCode (Código de la aerolínea encargada del vuelo)
 - seatsRemaining (Número de asientos libres en los vuelos)
 
+Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder relacionar el número de vuelos con el número de casos positivos oficiales por estado. Para este caso en concreto usamos el campo 'destinationAirport' de nuestro dataset original y los campos 'State', estado donde se observa la muestra, 'Active', casos positivos oficiales, y el campo 'Population' que representa el censo total del estado.
+
 # Resultados gracias a los datos obtenidos 
 
 - Promedio de tarifas por empresa
@@ -30,7 +32,41 @@ El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar co
 - Vuelos por día
 - Viajes más comunes
 
+# Herramientas utilizadas
+- Google Cloud: Servivio online para alojar las maquinas virutales y clusters utilizados para procesar los datos.
+- Apache Spark: Motor multilenguaje utilizado para facilitarnos la ejecución de los datos.
+- Python: Lenguaje de programación base para ejecutar spark.
+- Github: Servicio online para alojar todo el material correspondiente al proyecto.
 
+# Descripción del proyecto
+
+## Archivo utilizados:
+* 1 archivo .csv del que obtenemos los datos
+* 9 scripts para el procesamiento de los datos y la obtención de los gráficos
+* 12 imágenes que ilustran los gráficos del análisis de datos
+
+## Cómo ejecutar el programa
+Para poder ejecutar spark en modo **local** es necesario tener instalado python.
+```
+$ sudo apt-get install python
+```
+
+Una vez tengamos python instalado hay que instalar pyspark
+```
+$ curl -O https://ftp.cixug.es/apache/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+$ tar xvf spark-3.1.2-bin-hadoop3.2.tgz
+$ sudo mv spark-3.1.2-bin-hadoop3.2 /usr/local/spark
+```
+Ahora hay que actualizar la variable PATH en el archivo ~/.profile
+```
+$ echo 'PATH="$PATH:/usr/local/spark/bin"' >> ~/.profile
+$ source ~/.profile
+```
+Después de ejecutar todos los comandos anteriores ya podemos ejecutar los scripts especificando el archivo csv del que sacar los datos
+```
+$ spark-submit <script-name> <file.csv>
+```
+Ejemplo: $ spark-submit mergueDayStats.py itineraries_3GB.csv
 
 # Página web
 * [Página web](https://tripanalistycs.odoo.com/@/)
@@ -40,5 +76,3 @@ El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar co
 * Daniel Gallego
 * Rodrigo Quispe
 * Pablo Regidor
-
-
