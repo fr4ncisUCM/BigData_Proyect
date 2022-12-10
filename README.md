@@ -68,6 +68,13 @@ $ spark-submit <script-name> <file.csv>
 ```
 Ejemplo: $ spark-submit mergueDayStats.py itineraries_3GB.csv
 
+Para poder ejecutaar todos los scripts es imprescindible ejecuatr los siguientes comandos:
+```
+$ pip install pandas
+$ pip install matplotlib
+```
+Estos dos comandos instalan pandas, herramienta complementaria para tratar los datos, y la librería matplotlib para conseguirlos gráficos con el análisis de datos
+
 # Página web
 * [Página web](https://tripanalistycs.odoo.com/@/)
 
