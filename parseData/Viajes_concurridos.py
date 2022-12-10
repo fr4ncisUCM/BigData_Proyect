@@ -45,3 +45,9 @@ df2.show()
 df3 = dfFin.groupBy('destinationAirport').count()\
         .orderBy("count", ascending=False)
 df3.show()
+
+# plotting graph
+pandas_df = df3.toPandas()
+fig = pandas_df.plot(x="destinationAirport", y=[ 'count'], kind="bar").figure
+# Save the plot to a file
+fig.savefig("viajesConcurridos.png")
