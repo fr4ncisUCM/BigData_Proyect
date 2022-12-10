@@ -1,0 +1,26 @@
+TripsPerDay -> 2 Nodos -> 26 segundos (3GB)
+TripsPerDay -> 3 Nodos -> 23 segundos (3GB)
+
+TripsPerDay -> 2 Nodos -> 33 segundos (3GB) -> 2CPU , 7'5
+TripsPerDay -> 3 Nodos -> 34 segundos (3GB) -> 2CPU , 7'5
+TripsPerDay -> 4 Nodos -> 32 segundos (3GB) -> 2CPU , 7'5
+
+----------------------------------------------------------------
+
+EmpresasFind -> 2 Nodos -> 1 min 2 sec (3GB)
+EmpresasFind -> 3 Nodos -> 58 sec (3GB)
+EmpresasFind -> 5 Nodos -> 59 sec (3GB)
+
+EmpresasFind -> 2 Nodos -> 1 min 29 sec (3GB) -> 2CPU , 7'5
+EmpresasFind -> 3 Nodos -> 1 min 24 sec (3GB) -> 2CPU , 7'5
+EmpresasFind -> 4 Nodos -> 1 min 21 sec (3GB) -> 2CPU , 7'5
+
+---------------------------------------------------------------
+
+Viajes_concurridos -> 2 Nodos -> 1 min 17 sec
+Viajes_concurridos -> 3 Nodos -> 1 min 16 sec
+Viajes_concurridos -> 5 Nodos -> 1 min 13 sec
+
+Viajes_concurridos -> 3 Nodos -> 1 min 56 sec -> 2CPU , 7'5
+Viajes_concurridos -> 3 Nodos -> 1 min 41 sec -> 2CPU , 7'5
+Viajes_concurridos -> 4 Nodos -> 1 min 37 sec -> 2CPU , 7'5
