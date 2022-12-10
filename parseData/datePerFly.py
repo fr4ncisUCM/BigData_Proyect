@@ -1,8 +1,7 @@
+# Flights per Day
 from pyspark.sql.functions import col, substring
-from pyspark.sql.functions import udf
 import sys
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import concat, lit, col, asc
 
 spark_app = SparkSession.builder.appName('DateFly').getOrCreate()
 

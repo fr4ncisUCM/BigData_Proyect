@@ -1,10 +1,11 @@
+# Distance X fare
 import sys
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import substring
 from pyspark.sql.functions import concat, lit, col, asc
 from pyspark.sql.types import IntegerType, DoubleType
 
-spark_app = SparkSession.builder.appName('empresas').getOrCreate()
+spark_app = SparkSession.builder.appName('DistanceXFare').getOrCreate()
 
 df = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 

@@ -38,7 +38,6 @@ df3.show()
 
 # Convert to a pandas Dataframe
 pandas_df = df3.toPandas()
-print(pandas_df)
 # Create a line plot
 fig = pandas_df.plot().figure
 

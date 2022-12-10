@@ -10,13 +10,10 @@ validC = ['startingAirport', 'destinationAirport', 'totalFare', 'segmentsAirline
 
 df = df[validC]
 
-# df.printSchema()
-
 df1 = df.withColumn('CodeCompany', split(df['segmentsAirlineCode'], '\\|\\|').getItem(0)).drop('segmentsAirlineCode')
 
 df2 = df1.withColumn("totalFare", col("totalFare").cast('float'))
 
 df3 = df2.groupBy('StartingAirport', 'destinationAirport', 'CodeCompany').avg('totalFare')
 
-# df2.printSchema()
 df3.sort('startingAirport', 'destinationAirport', 'CodeCompany').show()

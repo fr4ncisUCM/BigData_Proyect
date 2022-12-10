@@ -12,7 +12,6 @@ validC = ['seatsRemaining', 'segmentsAirlineCode']
 
 df = df[validC]
 
-print(df.describe('seatsRemaining'))
 
 df1 = df.withColumn('CodeCompany', split(df['segmentsAirlineCode'], '\\|\\|').getItem(0)).drop('segmentsAirlineCode') \
     .withColumns({'seatsRemaining': df.seatsRemaining.cast(DoubleType())})\
