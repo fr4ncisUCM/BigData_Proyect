@@ -35,4 +35,4 @@ pandas_df = df4.toPandas()
 # plotting graph
 fig = pandas_df.plot(x='CodeCompany', y=['avg(totalFare)', 'count'], kind="bar").figure
 # Save the plot to a file
-fig.savefig("compare.png")
+fig.savefig("compareSoft.png")

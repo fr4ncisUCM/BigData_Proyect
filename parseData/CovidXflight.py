@@ -31,4 +31,4 @@ pandas_df = df3.toPandas()
 # plotting graph
 fig = pandas_df.plot(x="destinationAirport", y=['Active', 'count'], kind="bar").figure
 # Save the plot to a file
-fig.savefig("compare.png")
+fig.savefig("compareCovid.png")
