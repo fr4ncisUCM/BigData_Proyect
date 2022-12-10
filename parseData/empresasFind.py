@@ -7,7 +7,7 @@ spark_app = SparkSession.builder.appName('empresas').getOrCreate()
 df = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 
 # Valid columns
-validC = ['segmentsDepartureAirportCode']
+validC = ['segmentsAirlineCode']
 
 # fit the dataframe
 df = df[validC]
@@ -16,7 +16,7 @@ df = df[validC]
 airlanesNames = {}
 
 
-def complete_dict(names):  # TODO pending to approve
+def complete_dict(names):
     list_names = names.split('||')
     my_set = set()
     for name2 in list_names:
