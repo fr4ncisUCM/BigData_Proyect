@@ -53,9 +53,9 @@ $ sudo apt-get install python
 
 Una vez tengamos python instalado hay que instalar pyspark
 ```
-$ curl -O https://ftp.cixug.es/apache/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
-$ tar xvf spark-3.1.2-bin-hadoop3.2.tgz
-$ sudo mv spark-3.1.2-bin-hadoop3.2 /usr/local/spark
+$ curl -O https://archive.apache.org/dist/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
+$ tar xvf spark-3.3.1-bin-hadoop3.tgz
+$ sudo mv spark-3.3.1-bin-hadoop3 /usr/local/spark
 ```
 Ahora hay que actualizar la variable PATH en el archivo ~/.profile
 ```
