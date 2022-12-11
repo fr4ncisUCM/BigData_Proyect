@@ -32,10 +32,6 @@ my_list = df.select("segmentsAirlineCode").rdd.flatMap(lambda x: x).collect()
 # Complete the dictionary
 for valor in my_list:
     complete_dict(valor)
-# Write a file with the dict values
-with open("paso2.txt", "w") as file:
-    for key, value in airlanesNames.items():
-        file.write("{}: {}\n".format(key, value))
 
 # Create a list of the labels for the pie chart
 labels = list(airlanesNames.keys())

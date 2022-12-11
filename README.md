@@ -2,10 +2,10 @@
 Proyecto final de la asignatura Cloud y Big Data - curso 2022/23
 
 # Objetivo
-Hemos analizado un conjunto de datos con información de un gran número de vuelos en EE.UU. con el fin de llegar a conclusiones interesantes como cuales son los viajes más económicos, cuales son los destinos más frecuentes y con ello en que estados o ciudades el tráfico aéreo es más intenso o que días de la semana son más frecuentes.
+Hemos analizado un conjunto de datos con información de un gran número de vuelos en EEUU, con el fin de llegar a conclusiones interesantes como cuáles son los viajes más económicos, cuáles son los destinos más frecuentes y con ello en que estados o ciudades el tráfico aéreo es más intenso o que días de la semana son más frecuentes.
 
 # Necesidad de utilizar Big Data
-Analizar la gran cantidad de vuelos y los datos asociados a cada vuelo es bastante costoso. Además si queremos obtener resultados senciallamente y en un tiempo razonable es imprescindible aplicar la tecnología Big Data y 'large-scale parallel processing'.
+Analizar la gran cantidad de vuelos y los datos asociados a cada vuelo es bastante costoso. Además, si queremos obtener resultados sencillamente y en un tiempo razonable es imprescindible aplicar la tecnología Big Data y 'large-scale parallel processing'.
 
 # Datos utilizados para la obtención de resultados
 El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar conclusiones interesantes nos hemos enfocado en los siguientes:
@@ -34,23 +34,23 @@ Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder 
 
 # Herramientas utilizadas
 - Google Cloud: Servicio online para alojar las máquinas virtuales y clusters utilizados para procesar los datos.
-- Apache Spark: Motor multilenguaje utilizado para facilitarnos la ejecución de los datos.
+- Apache Spark: Motor multi-lenguaje utilizado para facilitarnos la ejecución de los datos.
 - Python: Lenguaje de programación base para ejecutar spark.
 - Github: Servicio online para alojar todo el material correspondiente al proyecto.
 
 # Speed up y diferencia de rendimiento con distintos working nodes
 > Utilizando una instancia de un cluster de 4 vCPU y cambiando el número de nodos trabajadores  
-- TripsPerDay -> 2 Nodos -> 26 segundos (3GB)
-- TripsPerDay -> 3 Nodos -> 23 segundos (3GB) 
-- TripsPerDay -> 5 Nodos -> 22 segundos (3GB)
+- TripsPerDay -> 2 Nodos -> 26 segundos 
+- TripsPerDay -> 3 Nodos -> 23 segundos  
+- TripsPerDay -> 5 Nodos -> 22 segundos 
 
-- EmpresasFind -> 2 Nodos -> 1 min 2 sec (3GB)
-- EmpresasFind -> 3 Nodos -> 58 sec (3GB)
-- EmpresasFind -> 5 Nodos -> 57 sec (3GB)
+- EmpresasFind -> 2 Nodos -> 1 min 2 sec 
+- EmpresasFind -> 3 Nodos -> 58 sec 
+- EmpresasFind -> 5 Nodos -> 57 sec 
 
-- Viajes_concurridos -> 2 Nodos -> 1 min 17 sec (3GB)
-- Viajes_concurridos -> 3 Nodos -> 1 min 16 sec (3GB)
-- Viajes_concurridos -> 5 Nodos -> 1 min 13 sec (3GB)
+- Viajes_concurridos -> 2 Nodos -> 1 min 17 sec 
+- Viajes_concurridos -> 3 Nodos -> 1 min 16 sec 
+- Viajes_concurridos -> 5 Nodos -> 1 min 13 sec 
 
 > Utilizando una instancia de un cluster de 2 vCPU y cambiando el número de nodos trabajadores
 - TripsPerDay -> 2 Nodos -> 33 segundos 
@@ -71,7 +71,7 @@ ya que no es directamente proporcional el ampliar el número de nodos (Depende d
 Pero está claro que es mucho más importante ampliar el número de vCPUs par ampliar el rendimiento; sin embargo, no hemos podio ampliar más,
 ya que nuestra licencia nos limitaba el número de CPUs que podemos utilizar para clusters.
 
-Lo hemos hecho con 3GB solo, ya que lo importante es ver el speed up si lo hubiera. Está claro que con mas volumen de datos 
+Lo hemos hecho con 3GB solo, ya que lo importante es ver el speed up si lo hubiera. Está claro que con más volumen de datos 
 la diferencia de tiempo sería mayor
 
 Está reflejado todo esto en el gráfico **performance_plot.png**

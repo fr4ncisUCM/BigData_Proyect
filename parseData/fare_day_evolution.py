@@ -29,5 +29,5 @@ pandas_df = df1.toPandas()
 fig = pandas_df.plot().figure
 
 # Save the plot to a file
-fig.savefig("lineplot.png")
+fig.savefig("lineplot_fare.png")
 

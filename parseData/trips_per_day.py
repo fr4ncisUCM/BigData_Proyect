@@ -7,7 +7,7 @@ spark_app = SparkSession.builder.appName('empresas').getOrCreate()
 df = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 
 # Valid columns
-validC = ['flightDate', 'totalFare']
+validC = ['flightDate']
 
 # fit the dataframe
 df = df[validC]
@@ -21,3 +21,4 @@ df1 = df.withColumn('day', substring('flightDate', 6, 5))\
     .drop('flightDate')
 
 
+# TODO archivo borrable ?
