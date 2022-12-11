@@ -68,7 +68,7 @@ Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder 
 Podemos observar un breve speed-up respecto a ampliar el número de nodos trabajadores, pero no hay mucha diferencia, 
 ya que no es directamente proporcional el ampliar el número de nodos (Depende de otros factores como el código , el lenguaje ...)
 
-Pero está claro que es mucho más importante ampliar el número de vCPUs par ampliar el rendimiento; sin embargo, no hemos podio ampliar más,
+Pero está claro que es mucho más importante ampliar el número de vCPUs para ampliar el rendimiento; sin embargo, no hemos podio ampliar más,
 ya que nuestra licencia nos limitaba el número de CPUs que podemos utilizar para clusters.
 
 Lo hemos hecho con 3GB solo, ya que lo importante es ver el speed up si lo hubiera. Está claro que con mas volumen de datos 
