@@ -65,7 +65,7 @@ Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder 
 - Viajes_concurridos -> 3 Nodos -> 1 min 41 sec  
 - Viajes_concurridos -> 4 Nodos -> 1 min 37 sec 
 
-Podemos observar un brebe speed-up respecto a ampliar el número de nodos trabajadores, pero no hay mucha diferencia, 
+Podemos observar un breve speed-up respecto a ampliar el número de nodos trabajadores, pero no hay mucha diferencia, 
 ya que no es directamente proporcional el ampliar el número de nodos (Depende de otros factores como el código , el lenguaje ...)
 
 Pero está claro que es mucho más importante ampliar el número de vCPUs par ampliar el rendimiento; sin embargo, no hemos podio ampliar más,
