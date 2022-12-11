@@ -108,8 +108,9 @@ $ spark-submit <script-name> <file.csv>
 ```
 Ejemplo: $ spark-submit mergueDayStats.py itineraries_3GB.csv
 
-Para poder ejecutaar todos los scripts es imprescindible ejecuatr los siguientes comandos:
+Para poder ejecutar todos los scripts es imprescindible ejecutar los siguientes comandos:
 ```
+$ sudo apt-get install python3-pip ( si no tienes instalado el pip )
 $ pip install pandas
 $ pip install matplotlib
 (mirar si no tiene pandas instalado)
