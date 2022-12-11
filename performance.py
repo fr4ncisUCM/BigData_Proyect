@@ -13,4 +13,4 @@ df = pd.DataFrame(data, index=['2-Nod', '3-Nod', '5-Nod'])
 df.plot(kind='bar', title='My Bar Plot')
 
 # Save the plot to a file
-plt.show()
+plt.savefig('my_plot.png')

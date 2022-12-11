@@ -33,15 +33,55 @@ Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder 
 - Viajes más comunes
 
 # Herramientas utilizadas
-- Google Cloud: Servivio online para alojar las maquinas virutales y clusters utilizados para procesar los datos.
+- Google Cloud: Servicio online para alojar las máquinas virtuales y clusters utilizados para procesar los datos.
 - Apache Spark: Motor multilenguaje utilizado para facilitarnos la ejecución de los datos.
 - Python: Lenguaje de programación base para ejecutar spark.
 - Github: Servicio online para alojar todo el material correspondiente al proyecto.
 
+# Speed up y diferencia de rendimiento con distintos working nodes
+> Utilizando una instancia de un cluster de 4 vCPU y cambiando el número de nodos trabajadores  
+- TripsPerDay -> 2 Nodos -> 26 segundos (3GB)
+- TripsPerDay -> 3 Nodos -> 23 segundos (3GB) 
+- TripsPerDay -> 5 Nodos -> 22 segundos (3GB)
+
+- EmpresasFind -> 2 Nodos -> 1 min 2 sec (3GB)
+- EmpresasFind -> 3 Nodos -> 58 sec (3GB)
+- EmpresasFind -> 5 Nodos -> 57 sec (3GB)
+
+- Viajes_concurridos -> 2 Nodos -> 1 min 17 sec (3GB)
+- Viajes_concurridos -> 3 Nodos -> 1 min 16 sec (3GB)
+- Viajes_concurridos -> 5 Nodos -> 1 min 13 sec (3GB)
+
+> Utilizando una instancia de un cluster de 2 vCPU y cambiando el número de nodos trabajadores
+- TripsPerDay -> 2 Nodos -> 33 segundos 
+- TripsPerDay -> 3 Nodos -> 34 segundos 
+- TripsPerDay -> 4 Nodos -> 32 segundos 
+
+- EmpresasFind -> 2 Nodos -> 1 min 29 sec 
+- EmpresasFind -> 3 Nodos -> 1 min 24 sec 
+- EmpresasFind -> 4 Nodos -> 1 min 21 sec  
+
+- Viajes_concurridos -> 3 Nodos -> 1 min 56 sec  
+- Viajes_concurridos -> 3 Nodos -> 1 min 41 sec  
+- Viajes_concurridos -> 4 Nodos -> 1 min 37 sec 
+
+Podemos observar un brebe speed-up respecto a ampliar el número de nodos trabajadores, pero no hay mucha diferencia, 
+ya que no es directamente proporcional el ampliar el número de nodos (Depende de otros factores como el código , el lenguaje ...)
+
+Pero está claro que es mucho más importante ampliar el número de vCPUs par ampliar el rendimiento; sin embargo, no hemos podio ampliar más,
+ya que nuestra licencia nos limitaba el número de CPUs que podemos utilizar para clusters.
+
+Lo hemos hecho con 3GB solo, ya que lo importante es ver el speed up si lo hubiera. Está claro que con mas volumen de datos 
+la diferencia de tiempo sería mayor
+
+Está reflejado todo esto en el gráfico **performance_plot.png**
+
+
+
 # Descripción del proyecto
 
 ## Archivo utilizados:
-* 1 archivo .csv del que obtenemos los datos
+* 2 archivo .csv del que obtenemos los datos
 * 9 scripts para el procesamiento de los datos y la obtención de los gráficos
 * 12 imágenes que ilustran los gráficos del análisis de datos
 
@@ -72,6 +112,7 @@ Para poder ejecutaar todos los scripts es imprescindible ejecuatr los siguientes
 ```
 $ pip install pandas
 $ pip install matplotlib
+(mirar si no tiene pandas instalado)
 ```
 Estos dos comandos instalan pandas, herramienta complementaria para tratar los datos, y la librería matplotlib para conseguirlos gráficos con el análisis de datos
 

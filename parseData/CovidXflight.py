@@ -6,7 +6,7 @@ spark_app = SparkSession.builder.appName('covid').getOrCreate()
 
 dfFlights = spark_app.read.format("csv").option("header", "true").load(sys.argv[1])
 
-dfCovid = spark_app.read.format("csv").option("header", "true").load("USA_Covid_Data.csv")
+dfCovid = spark_app.read.format("csv").option("header", "true").load(sys.argv[2])
 
 # Valid columns
 validCFights = ['destinationAirport']
