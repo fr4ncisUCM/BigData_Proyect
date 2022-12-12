@@ -115,8 +115,8 @@ $ pip install matplotlib
 ```
 Estos dos comandos instalan pandas, herramienta complementaria para tratar los datos, y la librería matplotlib para conseguirlos gráficos con el análisis de datos
 
-# Conclusiones de los datos procesados
-
+# Conclusiones
+Las conclusiones obtenidas del procesamiento de los datos se muestran en la página web, asociadas a su gráfico correspondiente.
 
 # Página web
 * [Página web](https://tripanalistycs.odoo.com/@/)
