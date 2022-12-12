@@ -76,8 +76,6 @@ la diferencia de tiempo sería mayor
 
 Está reflejado todo esto en el gráfico **performance_plot.png**
 
-
-
 # Descripción del proyecto
 
 ## Archivo utilizados:
@@ -116,6 +114,9 @@ $ pip install matplotlib
 (mirar si no tiene pandas instalado)
 ```
 Estos dos comandos instalan pandas, herramienta complementaria para tratar los datos, y la librería matplotlib para conseguirlos gráficos con el análisis de datos
+
+# Conclusiones de los datos procesados
+
 
 # Página web
 * [Página web](https://tripanalistycs.odoo.com/@/)
