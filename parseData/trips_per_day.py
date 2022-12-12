@@ -20,5 +20,4 @@ df1 = df.withColumn('day', substring('flightDate', 6, 5))\
     .orderBy("day", ascending=True)\
     .drop('flightDate')
 
-
-# TODO archivo borrable ?
+df1.show()
