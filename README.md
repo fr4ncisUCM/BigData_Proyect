@@ -9,7 +9,7 @@ Analizar la gran cantidad de vuelos y los datos asociados a cada vuelo es bastan
 
 # Datos utilizados para la obtención de resultados
 Para el análisis de datos hemos usado un dataset que contiene información de los vuelos encontrados en Expedia entre las fechas 16/04/2022 y 05/10/2022.
-Link a la página fr kaggle del dataset * [aquí](https://www.kaggle.com/datasets/dilwong/flightprices).
+Link a la página fr kaggle del dataset [aquí](https://www.kaggle.com/datasets/dilwong/flightprices).
 El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar conclusiones interesantes nos hemos enfocado en los siguientes:
 
 - startingAirport (Aeropuerto origen)
