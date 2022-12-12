@@ -8,6 +8,8 @@ Hemos analizado un conjunto de datos con información de un gran número de vuel
 Analizar la gran cantidad de vuelos y los datos asociados a cada vuelo es bastante costoso. Además, si queremos obtener resultados sencillamente y en un tiempo razonable es imprescindible aplicar la tecnología Big Data y 'large-scale parallel processing'.
 
 # Datos utilizados para la obtención de resultados
+Para el análisis de datos hemos usado un dataset que contiene información de los vuelos encontrados en Expedia entre las fechas 16/04/2022 y 05/10/2022.
+Link a la página fr kaggle del dataset * [aquí](https://www.kaggle.com/datasets/dilwong/flightprices).
 El dataset ofrece gran variedad de datos acerca de cada vuelo pero para sacar conclusiones interesantes nos hemos enfocado en los siguientes:
 
 - startingAirport (Aeropuerto origen)
@@ -37,6 +39,7 @@ Hemos utilizado como complemento otro archivo, 'USA_Covid_Data.csv', para poder 
 - Apache Spark: Motor multi-lenguaje utilizado para facilitarnos la ejecución de los datos.
 - Python: Lenguaje de programación base para ejecutar spark.
 - Github: Servicio online para alojar todo el material correspondiente al proyecto.
+- Kaggle: Página web de 
 
 # Speed up y diferencia de rendimiento con distintos working nodes
 > Utilizando una instancia de un cluster de 4 vCPU y cambiando el número de nodos trabajadores  
